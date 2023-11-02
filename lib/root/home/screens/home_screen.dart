@@ -1,4 +1,6 @@
 import 'package:demo/common_widgets/bottom_nav_bar.dart';
+import 'package:demo/common_widgets/story_grid_item.dart';
+import 'package:demo/constants/icon_constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,13 +14,13 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const SafeArea(
+    return  Scaffold(
+      body: SafeArea(
         child: SingleChildScrollView(
-          child: Text("Hello"),
+          child: StoryGridItem(imageName: IconsConstants.search, label: "Search")
         ),
       ),
-      bottomNavigationBar: BotNavBar()
+      bottomNavigationBar: const BotNavBar()
     );
   }
 }

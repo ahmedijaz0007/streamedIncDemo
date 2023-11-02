@@ -9,6 +9,8 @@ import '../constants/icon_constants.dart';
 import '../utilities/message_utils.dart';
 
 class BotNavBar extends StatefulWidget{
+  const BotNavBar({super.key});
+
   @override
   State<StatefulWidget> createState() => BotNavBarState();
 
