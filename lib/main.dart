@@ -14,6 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: const TextTheme().copyWith(bodyMedium: const TextStyle(
+          fontSize: 12.0,
+          fontFamily: 'Urbanist',
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+          letterSpacing: 1.0,
+        ),),
+
         navigationBarTheme: const NavigationBarThemeData().copyWith(labelTextStyle: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.selected)) {
             return const TextStyle(
@@ -31,6 +39,7 @@ class MyApp extends StatelessWidget {
           );
         }),
         ),
+
         colorScheme: ColorScheme.fromSeed(seedColor: primaryColor,
 
         ),

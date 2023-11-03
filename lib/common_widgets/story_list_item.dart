@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 import '../constants/app_colors.dart';
 
-class StoryGridItem extends StatelessWidget {
+class StoryListItem extends StatelessWidget {
   final String imageName;
   final String label;
-  const StoryGridItem(
+  const StoryListItem(
       {super.key, required this.imageName, required this.label});
 
   @override
@@ -22,7 +22,20 @@ class StoryGridItem extends StatelessWidget {
               size: const Size(50, 50),
               painter: HollowCirclePainter(),
             ),
-            Utils.getIcon(imageName)
+            SizedBox(
+                height: 49,
+                width: 49,
+                child: imageName == "notification.svg"?
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Utils.getIcon(imageName),
+                        Positioned(
+                            left: 26,
+                            top: 14,
+                            child: Utils.getIcon("badge.svg"))
+                      ],
+                    ):Utils.getIcon(imageName))
           ],
         ),
         const SizedBox(
@@ -31,13 +44,7 @@ class StoryGridItem extends StatelessWidget {
         Text(
           label,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-            fontFamily: 'Urbanist',
-            fontWeight: FontWeight.w500,
-            letterSpacing: 0.20,
-          ),
+          style: Theme.of(context).textTheme.bodyMedium,
         )
       ],
     );
